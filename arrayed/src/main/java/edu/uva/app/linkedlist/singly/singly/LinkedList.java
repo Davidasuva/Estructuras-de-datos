@@ -15,17 +15,16 @@ public class LinkedList<E> extends AbstractList<E>{
     private int size;
     private LinkedNode<E> head;
     private LinkedNode<E> cola;
-    private LinkedNode<E> current;
 
     public LinkedList(){
         size=0;
-        this.head=this.cola=this.current=null;
+        this.head=this.cola=null;
     }
 
     public LinkedList(E element){
         size=1;
         LinkedNode<E> node=new LinkedNode<>(element);
-        this.head=this.cola=this.current=node;
+        this.head=this.cola=node;
     }
 
     @Override
@@ -231,6 +230,11 @@ public class LinkedList<E> extends AbstractList<E>{
             return null;
         }
         E element= head.get();
+        if(size==1){
+            clear();
+            return element;
+        }
+       
         head=head.getNext();
         size--;
         return element;
@@ -259,7 +263,7 @@ public class LinkedList<E> extends AbstractList<E>{
 
     @Override
     public E[] pollArray(int cuantity){
-        if(isEmpty()){
+        if(isEmpty()||cuantity<=0){
             return null;
         }
         if(size<cuantity){
@@ -275,7 +279,7 @@ public class LinkedList<E> extends AbstractList<E>{
 
     @Override
     public E[] pollLastArray(int cuantity){
-        if(isEmpty()){
+        if(isEmpty()||cuantity<=0){
             return null;
         }
         if(size<cuantity){
@@ -291,7 +295,7 @@ public class LinkedList<E> extends AbstractList<E>{
 
     @Override
     public List<E> pollCollection(int cuantity){
-        if(isEmpty()){
+        if(isEmpty()||cuantity<=0){
             return null;
         }
         if(size<cuantity){
@@ -307,7 +311,7 @@ public class LinkedList<E> extends AbstractList<E>{
 
     @Override
     public List<E> pollLastCollection(int cuantity){
-        if(isEmpty()){
+        if(isEmpty()||cuantity<=0){
             return null;
         }
         if(size<cuantity){
@@ -411,7 +415,7 @@ public class LinkedList<E> extends AbstractList<E>{
 
     @Override
     public boolean replace(E element,E newElement, Predicate<E> comparator ){
-        if(comparator==null){
+        if(comparator==null||element==null||newElement==null){
             return false;
         }
         if(isEmpty()){
@@ -419,9 +423,9 @@ public class LinkedList<E> extends AbstractList<E>{
         }
 
         for(LinkedNode<E> node=head; node!=null; node=node.getNext()){
-            if(node.get()==element){
+            if(node.get().equals(element)){
                 if(comparator.test(node.get())){
-                    set(element,newElement);
+                    node.set(newElement);
                 }
             }
             
@@ -445,11 +449,6 @@ public class LinkedList<E> extends AbstractList<E>{
         if(size<array.length){
             return false;
         }
-
-        if(!contains(array)){
-            return false;
-        }
-
         for(int i=0; i<array.length;i++){
             replace(array[i],newArray[i],comparator);
         }
@@ -472,10 +471,6 @@ public class LinkedList<E> extends AbstractList<E>{
         if(size<collection.size()){
             return false;
         }
-
-        if(!contains(collection)){
-            return false;
-        }
         
         Iterator<E> iterator=collection.iterator();
         Iterator<E> iterator2=newCollection.iterator();
@@ -490,7 +485,7 @@ public class LinkedList<E> extends AbstractList<E>{
         if(isEmpty()){
             return false;
         }
-        if(element==null){
+        if(element==null||index==null){
             return false;
         }
 
@@ -655,7 +650,7 @@ public class LinkedList<E> extends AbstractList<E>{
     @Override
     public boolean clear(){
         try{
-            head=cola=current=null;
+            head=cola=null;
             size=0;
             return true;
         }catch(Exception e){
@@ -735,9 +730,9 @@ public class LinkedList<E> extends AbstractList<E>{
 
     @Override
     public Iterator<E> iterator(){ //Aca es el método que nos permite retornar un iterador
-        current=head; //Se empieza desde la cabeza
         
         return new Iterator<E>(){ //Aca se retorna el iterador, la cosa es que dentro de este se esta definiendo los métodos que este posee. es una clase anonima segun busqué
+            private LinkedNode<E> current=head;
 
 
             @Override

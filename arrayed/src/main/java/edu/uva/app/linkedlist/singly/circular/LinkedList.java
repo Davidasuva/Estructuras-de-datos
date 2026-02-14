@@ -368,6 +368,332 @@ public class LinkedList<E> extends AbstractList<E>{
         }
         return true;
     }
+
+    @Override
+    public E poll(){
+        if(isEmpty()){
+            return null;
+        }
+         E element= head.get();
+        if(size==1){
+            clear();
+            return element;
+        }
+        head=head.getNext();
+        flag.setNext(head);
+        size--;
+        return element;
+    }
+
+    @Override
+    public E pollLast(){
+        if(isEmpty()){
+            return null;
+        }
+        E element=flag.get();
+        LinkedNode<E> node=head;
+        if(size==1){
+            clear();
+            return element;
+        }
+
+        while(node.getNext()!=flag){
+            node=node.getNext();
+        }
+
+        node.setNext(head);
+        flag=node;
+        size--;
+        return element;
+    }
+
+    @Override
+    public E[] pollArray(int cuantity){
+
+        if(isEmpty()||cuantity<=0){
+            return null;
+        }
+        if(size<cuantity){
+            return null;
+        }
+        E[] array=peekArray(cuantity);
+        for(int i=0;i<cuantity;i++){
+            poll();
+        }
+        return array;
+    }
+
+    @Override
+    public E[] pollLastArray(int cuantity){
+        if(isEmpty()||cuantity<=0){
+            return null;
+        }
+        if(size<cuantity){
+            return null;
+        }
+        E[] array=peekLastArray(cuantity);
+        for(int i=0;i<cuantity;i++){
+            pollLast();
+        }
+        return array;
+    }
+    @Override
+    public List<E> pollCollection(int cuantity){
+
+        if(isEmpty()||cuantity<=0){
+            return null;
+        }
+        if(size<cuantity){
+            return null;
+        }
+        List<E> collection=peekCollection(cuantity);
+        for(int i=0;i<cuantity;i++){
+            poll();
+        }
+        return collection;
+    }
+    @Override
+    public List<E> pollLastCollection(int cuantity){
+
+        if(isEmpty()||cuantity<=0){
+            return null;
+        }
+        if(size<cuantity){
+            return null;
+        }
+        List<E> collection=peekLastCollection(cuantity);
+        for(int i=0;i<cuantity;i++){
+            pollLast();
+        }
+        return collection;
+    }
+
+    @Override
+    public boolean set(E index, E element){
+        if(isEmpty()){
+            return false;
+        }
+        if(element==null||index==null){
+            return false;
+        }
+        LinkedNode<E> node=head;
+        do { 
+            if(node.get().equals(index)){
+                node.set(element);
+                return true;
+            }
+            node=node.getNext();
+        } while (node!=head);
+        return false;
+    }
+
+    @Override
+    public boolean replace(E element, E newElement, Predicate<E> comparator){
+        if(comparator==null||element==null||newElement==null){
+            return false;
+        }
+        if(isEmpty()){
+            return false;
+        }
+        LinkedNode<E> node=head;
+        do { 
+            if(node.get().equals(element)){
+                if(comparator.test(node.get())){
+                    node.set(newElement);
+                }
+            }
+            node=node.getNext();
+        } while (node!=head);
+        return true;
+    }
+
+    @Override
+    public boolean replace(E[] array, E[] newArray, Predicate<E> comparator){
+        if(isEmpty()){
+            return false;
+        }
+        if(comparator==null){
+            return false;
+        }
+        if(array.length!=newArray.length){
+            return false;
+        }
+        if(size<array.length){
+            return false;
+        }
+
+        for(int i=0; i<array.length;i++){
+            replace(array[i],newArray[i],comparator);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean replace(Collection<E> collection, Collection<E> newCollection, Predicate<E> comparator){
+        if(isEmpty()||collection==null||newCollection==null){
+            return false;
+        }
+        if(comparator==null){
+            return false;
+        }
+        if(collection.size()!=newCollection.size()){
+            return false;
+        }
+        if(size<collection.size()){
+            return false;
+        }
+        Iterator<E> iterator=collection.iterator();
+        Iterator<E> iterator2=newCollection.iterator();
+        while(iterator.hasNext()){
+            replace(iterator.next(),iterator2.next(),comparator);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean retain(E[] array){
+        if(isEmpty()){
+            return false;
+        }
+        if(array==null){
+            return false;
+        }
+        LinkedNode<E> node=head;
+        do{
+            boolean found=false;
+            LinkedNode<E> next=node.getNext();
+
+            for(E element:array){
+                if(node.get().equals(element)){
+                    found=true;
+                    break;
+                }
+            }
+            if(!found){
+                remove(node.get());
+            }
+            node=next;
+        }while(node!=head);
+        return true;
+    }
+    @Override
+    public boolean retain(Collection<E> collection){
+        if(isEmpty()){
+            return false;
+        }
+        if(collection==null){
+            return false;
+        }
+        LinkedNode<E> node=head;
+        do { 
+            boolean found=false;
+            Iterator<E> iterator=collection.iterator();
+            LinkedNode<E> next=node.getNext();
+            while(iterator.hasNext()){
+                if(node.get().equals(iterator.next())){
+                    found=true;
+                    break;
+                }
+            }
+            if(!found){
+                remove(node.get());
+            }
+            node=next;
+        } while(node!=head);
+        return true;
+    }
+
+    @Override
+    public List<E> subList(E from, E to){
+        List<E> list=new LinkedList<>();
+        if(from==null||to==null){
+            return list;
+        }
+        if(isEmpty()){
+            return list;
+        }
+        boolean start=false;
+        LinkedNode<E> node=head;
+        do { 
+            if(node.get().equals(to)&&!start){
+                return list;
+            }
+            if(node.get().equals(from)){
+                start=true;
+            }
+            if(start){
+                list.add(node.get());
+            }
+            if(node.get().equals(to)){
+                break;
+            }
+            node=node.getNext();
+        } while (node!=head);
+        return list;
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public E[] toArray(){
+        Object[] array= new Object[size];
+        if(isEmpty()){
+            return (E[])array;
+        }
+        LinkedNode<E> node=head;
+        for(int i=0;i<size;i++){
+            array[i]=node.get();
+            node=node.getNext();
+        }
+
+        return(E[])array;
+    }
+    @SuppressWarnings("unchecked")
+    @Override
+    public boolean sort(ToIntFunction<E> toInt){
+        if(toInt==null||size<2){
+            return false;
+        }
+        Object[] array=toArray();
+        for(int x=0;x<size;x++){
+            for(int y=0;y<size-x;y++){
+                int a=toInt.applyAsInt((E)array[y]);
+                int b=toInt.applyAsInt((E)array[y+1]);
+
+                if(a>b){
+                    Object temporal=array[y];
+                    array[y]=array[y+1];
+                    array[y+1]=temporal;
+                }
+            }
+        }
+
+        LinkedNode<E> node=head;
+        int i=0;
+        do{
+            node.set((E)array[i++]);
+            node=node.getNext();
+        }while(node!=head);
+        return true;
+    }
+
+    @Override
+    public boolean reverse(){
+        if(isEmpty()||size<2){
+            return false;
+        }
+        LinkedNode<E> node=head;
+        LinkedNode<E> previous=flag;
+        flag=head;
+
+        do { 
+            LinkedNode<E> next=node.getNext();
+            node.setNext(previous);
+            previous=node;
+            node=next;
+
+        } while (node!=head);
+        return true;
+    }
     
 
 
@@ -398,6 +724,20 @@ public class LinkedList<E> extends AbstractList<E>{
             }
         };
     }
+
+    @Override
+    public void forEach(Function<E,Void> action){
+        if(action==null){
+            return;
+        }
+        LinkedNode<E> node=head;
+        do { 
+            action.apply(node.get());
+            node=node.getNext();
+        } while (node!=head);
+    }
+
+
 
 
 }
