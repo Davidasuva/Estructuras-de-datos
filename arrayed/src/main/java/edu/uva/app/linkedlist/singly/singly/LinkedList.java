@@ -366,12 +366,8 @@ public class LinkedList<E> extends AbstractList<E>{
         if(size<array.length){
             return false;
         }
-        if(!contains(array)){
-            return false;
-        }
-
         for(E x:array){
-            remove(x);
+            while(remove(x)){ }
         }
         return true;
     }
@@ -384,13 +380,11 @@ public class LinkedList<E> extends AbstractList<E>{
         if(size<collection.size()){
             return false;
         }
-        if(!contains(collection)){
-            return false;
-        }
         
         Iterator<E> iterator2 = collection.iterator();
         while(iterator2.hasNext()){
-            remove(iterator2.next());
+            while(remove(iterator2.next())){
+            }
         }
         return true;
     }
@@ -407,12 +401,10 @@ public class LinkedList<E> extends AbstractList<E>{
         LinkedNode<E> node=head;
         while(node!=null){
             LinkedNode<E> next=node.getNext();
-
             if(filter.test(node.get())){
                 remove(node.get());
-            }else{
-                node=next;
             }
+            node=next;
         }
         return true;
     }
