@@ -354,8 +354,9 @@ public class LinkedList<E> extends AbstractList<E>{
         if(isEmpty() || filter==null){
             return false;
         }
+        int count=size;
         LinkedNode<E> node=head;
-        for(int i=0;i<size;i++){
+        for(int i=0;i<count;i++){
             LinkedNode<E> next=node.getNext();
             if(filter.test(node.get())){
                 remove(node.get());
