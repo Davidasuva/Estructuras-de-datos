@@ -66,88 +66,83 @@ public class LinkedList<E> extends AbstractList<E>{
     
     @Override
     public boolean add(E element){
-        try {
-            LinkedNode<E> node=new LinkedNode<>(element);
-            if(isEmpty()){
-                this.head=this.flag=node;
-                flag.setNext(head);
-            }else{
-                this.flag.setNext(node);
-                this.flag=node;
-                this.flag.setNext(head);
-            }
-            size++;
-            return true;
-        } catch (Exception e) {
+        if(element==null){
             return false;
         }
+        LinkedNode<E> node=new LinkedNode<>(element);
+        if(isEmpty()){
+        this.head=this.flag=node;
+            flag.setNext(head);
+        }else{
+            this.flag.setNext(node);
+            this.flag=node;
+            this.flag.setNext(head);
+        }
+        size++;
+        return true;
     }
 
     @Override
     public boolean add(E[] array){
-        try {
-            for(E x:array){
-                add(x);
-            }
-            return true;
-        } catch (Exception e) {
+        if(array==null){
             return false;
         }
+        for(E x:array){
+            add(x);
+        }
+        return true;
     }
 
     @Override
     public boolean add(Collection<E> collection){
-        try {
-            Iterator<E> iterator=collection.iterator();
-            while(iterator.hasNext()){
-                add(iterator.next());
-            }
-            return true;
-        } catch (Exception e) {
+        if(collection==null){
             return false;
         }
+        Iterator<E> iterator=collection.iterator();
+        while(iterator.hasNext()){
+            add(iterator.next());
+        }
+        return true;
     }
 
     @Override
     public boolean addFirst(E element){
-        try {
-            LinkedNode<E> node=new LinkedNode<>(element);
-            if(isEmpty()){
-                this.head=this.flag=node;
-            }else{
-                node.setNext(this.head);
-                this.head=node;
-                flag.setNext(head);
-            }
-            size++;
-            return true;
-        } catch (Exception e) {
+        if(element==null){
             return false;
         }
+        LinkedNode<E> node=new LinkedNode<>(element);
+        if(isEmpty()){
+            node.setNext(node);
+            this.head=this.flag=node;
+        }else{
+            node.setNext(this.head);
+            this.head=node;
+            flag.setNext(head);
+        }
+        size++;
+        return true;
     }
     @Override
     public boolean addFirst(E[] array){
-        try {
-            for(E x:array){
-                addFirst(x);
-            }
-            return true;
-        } catch (Exception e) {
+        if(array==null){
             return false;
         }
+        for(E x:array){
+            addFirst(x);
+        }
+        return true;
     }
 
     @Override
     public boolean addFirst(Collection<E> collection){
-        try{
-            Iterator<E> iterator=collection.iterator();
-            while(iterator.hasNext()){
-                addFirst(iterator.next());
-            }
-            return true;
-        }catch (Exception e){
+        if(collection==null){
             return false;
         }
+        Iterator<E> iterator=collection.iterator();
+        while(iterator.hasNext()){
+            addFirst(iterator.next());
+        }
+        return true;
     }
     @Override
     public boolean contains(E element){
