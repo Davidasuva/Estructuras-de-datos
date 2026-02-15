@@ -387,7 +387,8 @@ public class LinkedList<E> extends AbstractList<E>{
         
         Iterator<E> iterator2 = collection.iterator();
         while(iterator2.hasNext()){
-            while(remove(iterator2.next())){
+            E val=iterator2.next();
+            while(remove(val)){
             }
         }
         return true;
@@ -719,6 +720,9 @@ public class LinkedList<E> extends AbstractList<E>{
 
     @Override
     public void forEach(Function<E,Void> action ){
+        if(isEmpty()){
+            return;
+        }
         if(action==null){
             return;
         }

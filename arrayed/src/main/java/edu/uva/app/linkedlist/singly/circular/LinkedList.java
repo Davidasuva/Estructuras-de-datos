@@ -343,7 +343,8 @@ public class LinkedList<E> extends AbstractList<E>{
         
         Iterator<E> iterator = collection.iterator();
         while(iterator.hasNext()){
-            while(remove(iterator.next())){
+            E val=iterator.next();
+            while(remove(val)){
             }
         }
         return true;
@@ -655,7 +656,7 @@ public class LinkedList<E> extends AbstractList<E>{
         }
         Object[] array=toArray();
         for(int x=0;x<size;x++){
-            for(int y=0;y<size-x;y++){
+            for(int y=0;y<size-x-1;y++){
                 int a=toInt.applyAsInt((E)array[y]);
                 int b=toInt.applyAsInt((E)array[y+1]);
 
@@ -683,7 +684,6 @@ public class LinkedList<E> extends AbstractList<E>{
         }
         LinkedNode<E> node=head;
         LinkedNode<E> previous=flag;
-        flag=head;
 
         do { 
             LinkedNode<E> next=node.getNext();
@@ -692,6 +692,9 @@ public class LinkedList<E> extends AbstractList<E>{
             node=next;
 
         } while (node!=head);
+        LinkedNode<E> temp=head;
+        head=flag;
+        flag=temp;
         return true;
     }
     
@@ -726,6 +729,9 @@ public class LinkedList<E> extends AbstractList<E>{
 
     @Override
     public void forEach(Function<E,Void> action){
+        if(isEmpty()){
+            return;
+        }
         if(action==null){
             return;
         }

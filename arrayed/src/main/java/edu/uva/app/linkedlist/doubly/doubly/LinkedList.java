@@ -40,7 +40,7 @@ public class LinkedList<E> extends AbstractList<E> {
     @Override
     public boolean clear(){
         try {
-            this.head=null;
+            this.head=this.tail=null;
             size=0;
             return true;
         } catch (Exception e) {
@@ -322,7 +322,8 @@ public class LinkedList<E> extends AbstractList<E> {
         
         Iterator<E> iterator = collection.iterator();
         while(iterator.hasNext()){
-            while(remove(iterator.next())){
+            E val=iterator.next();
+            while(remove(val)){
             }
         }
         return true;
@@ -472,8 +473,8 @@ public class LinkedList<E> extends AbstractList<E> {
                 if(comparator.test(node.get())){
                     node.set(newElement);
                 }
-                node=node.getNext();
             }
+            node=node.getNext();
         }
         return false;
         
@@ -521,8 +522,151 @@ public class LinkedList<E> extends AbstractList<E> {
         return true;
     }
 
+    @Override
+    public boolean retain(E[] array){
+        if(isEmpty()){
+            return false;
+        }
+        if(array==null){
+            return false;
+        }
+        LinkedNode<E> node=head;
+        while(node!=null){
+            boolean found=false;
+            LinkedNode<E> next=node.getNext();
+            for(E element:array){
+                if(node.get().equals(element)){
+                    found=true;
+                    break;
+                }
+            }
+            if(!found){
+                remove(node.get());
+            }
+            node=next;
+        }
+        return true;
+        }
 
+    @Override
+    public boolean retain(Collection<E> collection){
+        if(isEmpty()){
+            return false;
+        }
+        if(collection==null){
+            return false;
+        }
+        LinkedNode<E> node=head;
+        while(node!=null){
+            boolean found=false;
+            Iterator<E> iterator=collection.iterator();
+            LinkedNode<E> next=node.getNext();
+            while(iterator.hasNext()){
+                if(node.get().equals(iterator.next())){
+                    found=true;
+                    break;
+                }
+            }
+            if(!found){
+                remove(node.get());
+            }
+            node=next;
+        }
+        return true;
+    }
 
+    @Override
+    public List<E> subList(E from, E to){
+        List<E> list=new LinkedList<>();
+        if(from==null||to==null){
+            return list;
+        }
+        if(isEmpty()){
+            return list;
+        }
+        boolean start=false;
+        LinkedNode<E> node=head;
+        while(node!=null){
+            if(node.get().equals(to)&&!start){
+                return list;
+            }
+            if(node.get().equals(from)){
+                start=true;
+            }
+            if(start){
+                list.add(node.get());
+            }
+            if(node.get().equals(to)){
+                break;
+            }
+            node=node.getNext();
+        }
+        return list;
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public E[] toArray(){
+        Object[] array= new Object[size];
+        if(isEmpty()){
+            return (E[])array;
+        }
+        LinkedNode<E> node=head;
+        for(int i=0;i<size;i++){
+            array[i]=node.get();
+            node=node.getNext();
+        }
+
+        return(E[])array;
+    }
+    @SuppressWarnings("unchecked")
+    @Override
+    public boolean sort(ToIntFunction<E> toInt){
+        if(toInt==null||size<2){
+            return false;
+        }
+        Object[] array=toArray();
+        for(int x=0;x<size;x++){
+            for(int y=0;y<size-x-1;y++){
+                int a=toInt.applyAsInt((E)array[y]);
+                int b=toInt.applyAsInt((E)array[y+1]);
+
+                if(a>b){
+                    Object temporal=array[y];
+                    array[y]=array[y+1];
+                    array[y+1]=temporal;
+                }
+            }
+        }
+
+        LinkedNode<E> node=head;
+        int i=0;
+        while(node!=null){
+            node.set((E)array[i++]);
+            node=node.getNext();
+        }
+        
+        return true;
+    }
+    @Override
+    public boolean reverse(){
+        if(isEmpty()||size<2){
+            return false;
+        }
+
+        LinkedNode<E> node=head;
+
+        while(node!=null){
+            LinkedNode<E> next=node.getNext();
+            node.setNext(node.getPrevious());
+            node.setPrevious(next);
+            node=next;
+        }
+        LinkedNode<E> temp=head;
+        head=tail;
+        tail=temp;
+        return true;
+    }
     //Iterator part
     @Override
     public Iterator<E> iterator(){
@@ -557,9 +701,23 @@ public class LinkedList<E> extends AbstractList<E> {
                 back=back.getPrevious();
                 return element;
             }
-
-
         };
+    }
+
+    @Override
+    public void forEach(Function<E,Void> action){
+        if(isEmpty()){
+            return;
+        }
+        if(action==null){
+            return;
+        }
+        LinkedNode<E> node=head;
+        while(node!=null){
+            action.apply(node.get());
+            node=node.getNext();
+        }
+
     }
 
 }
