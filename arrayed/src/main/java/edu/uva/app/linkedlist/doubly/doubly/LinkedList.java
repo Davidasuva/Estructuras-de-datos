@@ -28,6 +28,22 @@ public class LinkedList<E> extends AbstractList<E> {
     }
     
     @Override
+    public String toString() {
+        LinkedNode<E> node=head;
+        String string;
+        if(node==null){
+            string ="LinkedList: Empty";  
+        }else{
+            string ="LinkedList:";
+            for(int i=0;i<size;i++){
+                string+=" Next: "+node.toString();
+                node=node.getNext();
+            }
+        }
+        return string;
+    }
+    
+    @Override
     public boolean isEmpty(){
         return this.head==null;
     }
@@ -472,6 +488,7 @@ public class LinkedList<E> extends AbstractList<E> {
             if(node.get().equals(element)){
                 if(comparator.test(node.get())){
                     node.set(newElement);
+                    break;
                 }
             }
             node=node.getNext();

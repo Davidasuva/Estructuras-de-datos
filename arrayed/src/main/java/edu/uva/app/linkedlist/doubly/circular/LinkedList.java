@@ -26,7 +26,22 @@ public class LinkedList<E> extends AbstractList<E> {
         LinkedNode<E> node=new LinkedNode<E>(element);
         this.head=this.flag=node;
     }
-
+    @Override
+    public String toString() {
+        LinkedNode<E> node=head;
+        String string;
+        if(node==null){
+            string ="LinkedList: Empty";  
+        }else{
+            string ="LinkedList:";
+            for(int i=0;i<size;i++){
+                string+=" Next: "+node.toString();
+                node=node.getNext();
+            }
+        }
+        return string;
+    }
+    
     @Override
     public boolean isEmpty(){
         return this.head==null;
@@ -485,6 +500,7 @@ public class LinkedList<E> extends AbstractList<E> {
             if(node.get().equals(element)){
                 if(comparator.test(node.get())){
                     node.set(newElement);
+                    break;
                 }
             }
             node=node.getNext();
@@ -683,8 +699,8 @@ public class LinkedList<E> extends AbstractList<E> {
 
     //Iterator part
     @Override
-    public Iterator<E> iterator(){ //Aca es el método que nos permite retornar un iterador
-        return new Iterator<E>(){ //Aca se retorna el iterador, la cosa es que dentro de este se esta definiendo los métodos que este posee. es una clase anonima segun busqué
+    public Iterator<E> iterator(){ 
+        return new Iterator<E>(){
 
             int contador=0;
             int contadorPrevious=0;
@@ -708,7 +724,7 @@ public class LinkedList<E> extends AbstractList<E> {
                 E element=current.get();
                 current=current.getNext();
                 contador++;
-                return element; //Aca se va avanzando entre los nodos y se va retornando el elemento que se tenga
+                return element;
             }
 
             public E previous(){

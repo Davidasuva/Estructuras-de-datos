@@ -43,7 +43,7 @@ public class LinkedNode<E> extends AbstractNode<E> {
     }
     @Override
     public String toString(){
-        return "LinkedNode\n( Element: "+get().toString()+" Previous: "+previous.toString()+" Next: "+next.toString()+" )";
+        return "LinkedNode\n( Element: "+get().toString()+" Previous: "+previous+" Next: "+next+" )";
     }
 
 

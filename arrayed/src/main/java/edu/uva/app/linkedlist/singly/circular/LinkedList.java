@@ -26,6 +26,22 @@ public class LinkedList<E> extends AbstractList<E>{
         LinkedNode<E> node=new LinkedNode<>(element);
         this.head=this.flag=node;
     }
+    
+    @Override
+    public String toString() {
+        LinkedNode<E> node=head;
+        String string;
+        if(node==null){
+            string ="LinkedList: Empty";  
+        }else{
+            string ="LinkedList:";
+            for(int i=0;i<size;i++){
+                string+=" Next: "+node.toString();
+                node=node.getNext();
+            }
+        }
+        return string;
+    }
 
     @Override
     public boolean isEmpty(){
@@ -496,6 +512,7 @@ public class LinkedList<E> extends AbstractList<E>{
             if(node.get().equals(element)){
                 if(comparator.test(node.get())){
                     node.set(newElement);
+                    break;
                 }
             }
             node=node.getNext();
@@ -696,28 +713,28 @@ public class LinkedList<E> extends AbstractList<E>{
 
 
 
-    //Parte de Iterator
+    //Iterator part
     @Override
-    public Iterator<E> iterator(){ //Aca es el método que nos permite retornar un iterador
-        return new Iterator<E>(){ //Aca se retorna el iterador, la cosa es que dentro de este se esta definiendo los métodos que este posee. es una clase anonima segun busqué
+    public Iterator<E> iterator(){//this method allow to return a iterator, for explore a list
+        return new Iterator<E>(){ //Here we return the iterator, making it in a anonymous class.
 
             int contador=0;
             private LinkedNode<E> current=head;
 
             @Override
             public boolean hasNext(){
-                return contador<size;
+                return contador<size;//if the contador exceeds the size of the list, it will have no more nexts
             }
 
             @Override
             public E next(){
                 if(!hasNext()){
-                    throw new IllegalStateException("No more elements");
+                    throw new IllegalStateException("No more elements");//if don't have next, it generates a warn.
                 }
-                E element=current.get();
-                current=current.getNext();
+                E element=current.get();//Saves the current element of the node
+                current=current.getNext();//Move forward between nodes
                 contador++;
-                return element; //Aca se va avanzando entre los nodos y se va retornando el elemento que se tenga
+                return element; //Return the element which was save before.
             }
         };
     }

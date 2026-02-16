@@ -1,4 +1,4 @@
-package edu.uva.model;
+package edu.uva.app.array;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -11,12 +11,12 @@ public class Array<E> extends AbstractArray<E> {
 
     private E[] array; //Se crea el array
     private int size; //se crea el tamaño del array(Osea el número de elementos que hay sin contar nulls)
-    private static final int defaultSize=1000; //El tamaño por default del array, para inicializarlo
+
 
 
     @SuppressWarnings("unchecked")
-    public Array(){
-        this.array= (E[]) new Object[defaultSize]; 
+    public Array(int size){
+        this.array= (E[]) new Object[size]; 
         this.size=0; //Se inicializa el constructor de la clase y se da valores
     }
 
