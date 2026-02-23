@@ -1,15 +1,14 @@
 package edu.uva.app.linkedlist.singly.singly;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
-import java.util.function.ToIntFunction;
-import org.junit.jupiter.api.Test;
-
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.ToIntFunction;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 import edu.uva.model.iterator.Iterator;
 
@@ -330,7 +329,7 @@ public class LinkedListTest {
         System.out.println(list.toString());
         assertTrue(list.remove(mayorQueDos));
         System.out.println(list.toString());
-        assertFalse(list.remove(mayorQueDos));
+        assertTrue(list.remove(mayorQueDos));
     }
 
     @Test

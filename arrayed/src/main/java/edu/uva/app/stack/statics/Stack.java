@@ -14,6 +14,7 @@ public class Stack<E> extends AbstractStack<E> {
 
 
     public Stack(int sizeMax){
+
         array=new Array<>(sizeMax);
     }
 
@@ -22,7 +23,7 @@ public class Stack<E> extends AbstractStack<E> {
         if(isEmpty()){
             return null;
         }
-        return array.get(array.size());
+        return array.get(array.size()-1);
     }
 
     @Override
@@ -30,8 +31,8 @@ public class Stack<E> extends AbstractStack<E> {
         if(isEmpty()){
             return null;
         }
-        E element=array.get(array.size());
-        array.remove(array.size());
+        E element=array.get(array.size()-1);
+        array.remove(array.size()-1);
         return element;
     }
 
@@ -51,41 +52,49 @@ public class Stack<E> extends AbstractStack<E> {
 
     @Override
     public boolean isEmpty(){
+
         return array.isEmpty();
     }
 
     @Override
     public boolean contains(E element){
+
         return array.contains(element);
     }
 
     @Override
     public boolean contains(E[] element){
+
         return array.contains(element);
     }
 
     @Override
     public boolean contains(Collection<E> collection){
+
         return array.contains(collection);
     }
 
     @Override
     public boolean reverse(){
+
         return array.reverse();
     }
 
     @Override
     public int size(){
+
         return array.size();
     }
 
     @Override
     public void forEach(Function<E,Void> action){
+
         array.forEach(action);
     }
 
     @Override
     public Iterator<E> iterator(){
+
         return array.iterator();
     }
 
