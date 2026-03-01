@@ -730,7 +730,7 @@ public class LinkedList<E> extends AbstractList<E>{
         }
 
         for(LinkedNode<E> node=head; node!=null;node=node.getNext()){//Move forwards between nodes and makes the action for each node.
-            action.apply(node.get());//here apply the action in the node.
+            action.apply(node.get());//here apply the action in the element of the node.
         }
     }
 

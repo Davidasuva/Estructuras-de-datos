@@ -1,4 +1,4 @@
-package edu.uva.app.stack.dinamic;
+package edu.uva.app.stack.list;
 
 import java.util.function.Function;
 

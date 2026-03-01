@@ -1,4 +1,4 @@
-package edu.uva.app.queue.dinamic;
+package edu.uva.app.queue.list;
 import edu.uva.model.collection.Collection;
 import edu.uva.model.iterator.Iterator;
 import edu.uva.model.queue.AbstractQueue;

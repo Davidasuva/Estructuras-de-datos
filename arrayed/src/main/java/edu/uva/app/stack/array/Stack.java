@@ -1,4 +1,4 @@
-package edu.uva.app.stack.statics;
+package edu.uva.app.stack.array;
 
 import java.util.function.Function;
 

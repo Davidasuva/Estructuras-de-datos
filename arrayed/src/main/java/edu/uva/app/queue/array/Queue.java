@@ -1,4 +1,4 @@
-package edu.uva.app.queue.statics;
+package edu.uva.app.queue.array;
 import edu.uva.app.array.Array;
 import edu.uva.model.collection.Collection;
 import edu.uva.model.iterator.Iterator;
@@ -10,30 +10,31 @@ public class Queue<E> extends AbstractQueue<E> {
 
     private final Array<E> array;
 
-    public Queue(int sizeMax){
-        array=new Array<>(sizeMax);
+    public Queue(int capacity){
+        this.array = new Array<>(capacity);
     }
 
-    public Queue(Array<E> array){
-        this.array=array;
+    public boolean insert(E element){
+        return array.add(element);
     }
 
-    @Override
-    public E peek() {
-        return array.get(0);
-    }
 
-    @Override
     public E extract(){
-        E element=array.get(0);
+        if(isEmpty()){
+            return null;
+        }
+        E value=array.get(0);
         array.remove(0);
-        return element;
+        return value;
     }
 
-    @Override
-    public boolean insert(E element) {
-        array.add(element);
-        return true;
+
+    public E peek(){
+        if(isEmpty()){
+            return null;
+        }
+
+        return array.get(0);
     }
 
     @Override
