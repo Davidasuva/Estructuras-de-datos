@@ -4,7 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cef3ea5-a487-4390-9516-59fed917c3f2" name="Changes" comment="fixed array and fixed queue" />
+    <list default="true" id="5cef3ea5-a487-4390-9516-59fed917c3f2" name="Changes" comment="fixed array and fixed queue">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/bintree/BinTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/bintree/Root.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/priorityQueue/PriorityQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/model/priorityqueue/AbstractPriorityQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/model/priorityqueue/PriorityQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/model/tree/AbstractTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/model/tree/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/uva/app/bintree/BinTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/linkedlist/node/singly/singly/LinkedNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/linkedlist/node/singly/singly/LinkedNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/queue/list/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/queue/list/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DataStructures.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/array/Array$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/array/Array$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/array/Array.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/array/Array.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/doubly/circular/LinkedList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/doubly/circular/LinkedList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/doubly/circular/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/doubly/circular/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/doubly/doubly/LinkedList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/doubly/doubly/LinkedList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/doubly/doubly/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/doubly/doubly/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/node/doubly/circular/LinkedNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/node/doubly/circular/LinkedNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/node/doubly/doubly/LinkedNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/node/doubly/doubly/LinkedNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/node/singly/circular/LinkedNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/node/singly/circular/LinkedNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/node/singly/singly/LinkedNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/node/singly/singly/LinkedNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/singly/circular/LinkedList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/singly/circular/LinkedList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/singly/circular/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/singly/circular/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/singly/singly/LinkedList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/singly/singly/LinkedList$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/singly/singly/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/singly/singly/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/queue/dinamic/Queue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/queue/statics/Queue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/stack/dinamic/Stack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/stack/statics/Stack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/array/AbstractArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/array/AbstractArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/array/Array.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/array/Array.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/array/BufferArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/array/BufferArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/collection/AbstractCollection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/collection/AbstractCollection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/collection/Collection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/collection/Collection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/iterable/Iterable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/iterable/Iterable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/iterator/Iterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/iterator/Iterator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/list/AbstractList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/list/AbstractList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/list/List.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/list/List.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/node/AbstractNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/node/AbstractNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/node/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/node/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/queue/AbstractQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/queue/AbstractQueue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/queue/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/queue/Queue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/stack/AbstractStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/stack/AbstractStack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/stack/Stack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/stack/Stack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.uva.app.linkedlist.singly.singly.LinkedListTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.uva.app.linkedlist.singly.singly.LinkedListTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.uva.app.linkedlist.singly.singly.LinkedListTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.uva.app.linkedlist.singly.singly.LinkedListTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/uva/app/linkedlist/singly/singly/LinkedListTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/edu/uva/app/linkedlist/singly/singly/LinkedListTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +71,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -42,18 +99,140 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/OneDrive/Documentos/Universidad/3° Semestre/Materia Estructuras/Estructuras de datos/arrayed&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.BinTreeTest.getHeight.executor": "Debug",
+    "JUnit.BinTreeTest.getLeftSubtree.executor": "Run",
+    "JUnit.BinTreeTest.getRightSubtree.executor": "Run",
+    "JUnit.BinTreeTest.getSubtree.executor": "Run",
+    "JUnit.BinTreeTest.getlCI.executor": "Run",
+    "JUnit.BinTreeTest.getlCIM.executor": "Run",
+    "JUnit.BinTreeTest.inorder.executor": "Run",
+    "JUnit.BinTreeTest.insert.executor": "Run",
+    "JUnit.BinTreeTest.isComplete.executor": "Run",
+    "JUnit.BinTreeTest.isFull.executor": "Run",
+    "JUnit.BinTreeTest.levelOrder.executor": "Run",
+    "JUnit.BinTreeTest.postorder.executor": "Run",
+    "JUnit.BinTreeTest.preorder.executor": "Run",
+    "JUnit.BinTreeTest.remove.executor": "Run",
+    "JUnit.BinTreeTest.search.executor": "Run",
+    "JUnit.BinTreeTest.size.executor": "Run",
+    "JUnit.LinkedListTest.executor": "Run",
+    "JUnit.LinkedListTest.testSet.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/david/OneDrive/Documentos/Universidad/3° Semestre/Materia Estructuras/Estructuras de datos/arrayed",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="edu.uva.app.bintree" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.BinTreeTest.getRightSubtree">
+    <configuration name="BinTreeTest.getLeftSubtree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="arrayed" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uva.app.bintree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
+      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
+      <option name="METHOD_NAME" value="getLeftSubtree" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinTreeTest.getRightSubtree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="arrayed" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uva.app.bintree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
+      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
+      <option name="METHOD_NAME" value="getRightSubtree" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinTreeTest.getlCIM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="arrayed" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uva.app.bintree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
+      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
+      <option name="METHOD_NAME" value="getlCIM" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinTreeTest.isComplete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="arrayed" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uva.app.bintree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
+      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
+      <option name="METHOD_NAME" value="isComplete" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinTreeTest.isFull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="arrayed" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uva.app.bintree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
+      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
+      <option name="METHOD_NAME" value="isFull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BinTreeTest.getRightSubtree" />
+        <item itemvalue="JUnit.BinTreeTest.getLeftSubtree" />
+        <item itemvalue="JUnit.BinTreeTest.isComplete" />
+        <item itemvalue="JUnit.BinTreeTest.isFull" />
+        <item itemvalue="JUnit.BinTreeTest.getlCIM" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -85,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772375809556</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed array and fixed queue">
+      <option name="closed" value="true" />
+      <created>1772375870508</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772375870508</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

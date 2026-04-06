@@ -11,7 +11,7 @@ public class Queue<E> extends AbstractQueue<E> {
     private final LinkedList<E> list;
 
     public Queue() {
-        list = null;
+        list = new LinkedList<>();
     }
 
     public Queue(LinkedList<E> list) {
