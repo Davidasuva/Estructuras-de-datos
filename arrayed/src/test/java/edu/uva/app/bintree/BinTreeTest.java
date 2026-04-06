@@ -129,6 +129,16 @@ class BinTreeTest {
 
     @Test
     void getGrade() {
+        BinTree<String> binTree = new BinTree<>();
+        assertTrue(binTree.insert("a"));
+        assertTrue(binTree.insert("b"));
+        assertTrue(binTree.insert("c"));
+        assertTrue(binTree.insert("d"));
+        assertTrue(binTree.insert("e"));
+        assertTrue(binTree.insert("f"));
+        assertTrue(binTree.insert("g"));
+        assertTrue(binTree.insert("h"));
+        System.out.println(binTree.getGrade());
     }
 
     @Test

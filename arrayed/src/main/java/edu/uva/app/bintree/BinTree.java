@@ -183,7 +183,27 @@ public class BinTree<E> extends AbstractTree<E> {
 
     @Override
     public int getGrade() {
-        return 2;
+        int grade=0;
+        if(isEmpty()||(root.getLeft()==null&&root.getRight()==null)){
+            return grade;
+        }
+        if(root.getLeft()!=null){
+            grade++;
+
+        }
+        if(root.getRight()!=null){
+            grade++;
+        }
+        BinTree<E> treeL=new BinTree<>(root.getLeft());
+        BinTree<E> treeR=new BinTree<>(root.getRight());
+        int gradeL=treeL.getGrade();
+        int gradeR=treeR.getGrade();
+        if(gradeL>grade){
+            return gradeL;
+        }else if(gradeR>gradeL){
+            return gradeR;
+        }
+        return grade;
     }
 
     @Override
