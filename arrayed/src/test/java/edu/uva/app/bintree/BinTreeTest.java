@@ -275,4 +275,65 @@ class BinTreeTest {
         LinkedList<String> list = binTree.levelOrder();
         System.out.println(list.toString());
     }
+
+
+    @Test
+    void testSearchPreOrder() {
+        BinTree<String> binTree = new BinTree<>();
+        assertTrue(binTree.insert("a"));
+        assertTrue(binTree.insert("b"));
+        assertTrue(binTree.insert("c"));
+        assertTrue(binTree.insert("d"));
+        assertTrue(binTree.insert("e"));
+        assertTrue(binTree.insert("f"));
+        assertTrue(binTree.insert("g"));
+        assertTrue(binTree.insert("h"));
+        System.out.println("Pasos: "+binTree.searchPreOrder("h"));
+        binTree.searchPreOrderWithTime("h");
+    }
+
+    @Test
+    void searchInOrder() {
+        BinTree<String> binTree = new BinTree<>();
+        assertTrue(binTree.insert("a"));
+        assertTrue(binTree.insert("b"));
+        assertTrue(binTree.insert("c"));
+        assertTrue(binTree.insert("d"));
+        assertTrue(binTree.insert("e"));
+        assertTrue(binTree.insert("f"));
+        assertTrue(binTree.insert("g"));
+        assertTrue(binTree.insert("h"));
+        System.out.println("Pasos: "+binTree.searchInOrder("d"));
+        binTree.searchInOrderWithTime("d");
+    }
+
+    @Test
+    void searchPostOrder() {
+        BinTree<String> binTree = new BinTree<>();
+        assertTrue(binTree.insert("a"));
+        assertTrue(binTree.insert("b"));
+        assertTrue(binTree.insert("c"));
+        assertTrue(binTree.insert("d"));
+        assertTrue(binTree.insert("e"));
+        assertTrue(binTree.insert("f"));
+        assertTrue(binTree.insert("g"));
+        assertTrue(binTree.insert("h"));
+        System.out.println("Pasos: "+binTree.searchPostOrder("h"));
+        binTree.searchPostOrderWithTime("h");
+    }
+
+    @Test
+    void searchLevelOrder() {
+        BinTree<String> binTree = new BinTree<>();
+        assertTrue(binTree.insert("a"));
+        assertTrue(binTree.insert("b"));
+        assertTrue(binTree.insert("c"));
+        assertTrue(binTree.insert("d"));
+        assertTrue(binTree.insert("e"));
+        assertTrue(binTree.insert("f"));
+        assertTrue(binTree.insert("g"));
+        assertTrue(binTree.insert("h"));
+        System.out.println("Pasos: "+binTree.searchLevelOrder("h"));
+        binTree.searchLevelWithTime("h");
+    }
 }

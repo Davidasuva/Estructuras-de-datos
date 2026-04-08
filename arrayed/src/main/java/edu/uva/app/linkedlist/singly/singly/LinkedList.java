@@ -640,6 +640,24 @@ public class LinkedList<E> extends AbstractList<E>{
         return true;
 
     }
+    public void buscarEnLista(LinkedList<E> lista, E objetivo) {
+        int pasos = 0;
+        long inicio = System.nanoTime();
+
+        Iterator<E> iterator=lista.iterator();
+        while(iterator.hasNext()){
+            pasos++;
+            if(iterator.next().equals(objetivo)){
+                break;
+            }
+        }
+        long fin = System.nanoTime();
+
+        System.out.println("Lista simplemente enlazada: ");
+        System.out.println("Pasos: " + pasos);
+        System.out.println("Tiempo (s): " + (fin - inicio));
+        System.out.println();
+    }
 
     //Collection part
     @Override

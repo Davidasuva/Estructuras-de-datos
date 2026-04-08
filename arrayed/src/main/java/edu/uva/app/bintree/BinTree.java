@@ -1,6 +1,7 @@
 package edu.uva.app.bintree;
 import edu.uva.app.linkedlist.singly.singly.LinkedList;
 import edu.uva.app.queue.list.Queue;
+import edu.uva.model.iterator.Iterator;
 import edu.uva.model.node.AbstractNode;
 import edu.uva.model.tree.AbstractTree;
 import edu.uva.model.tree.Tree;
@@ -10,7 +11,7 @@ import edu.uva.model.tree.Tree;
 public class BinTree<E> extends AbstractTree<E> {
 
     private Root<E> root;
-    private int size;
+    protected int size;
 
 
     public BinTree(Root<E> root) {
@@ -70,7 +71,6 @@ public class BinTree<E> extends AbstractTree<E> {
         Root<E> nextLevel=root.getLeft();
         LCI++;
         int nivel=2;
-
         while(!queue.isEmpty()){
             Root<E> current=queue.extract();
 
@@ -78,20 +78,16 @@ public class BinTree<E> extends AbstractTree<E> {
                 nivel++;
                 nextLevel=current.getLeft();
             }
-
-
             if(current.getLeft()!=null){
                 queue.insert(current.getLeft());
                 LCI+=nivel;
 
             }
-
             if(current.getRight()!=null){
                 queue.insert(current.getRight());
                 LCI+=nivel;
             }
         }
-
         return LCI;
     }
 
@@ -420,5 +416,157 @@ public class BinTree<E> extends AbstractTree<E> {
             }
         }
         return list;
+    }
+    public int searchLevelOrder(E objective){
+        int pasos=0;
+        if(isEmpty()){
+            return 0;
+        }
+        Queue<Root<E>> queue= new Queue<>();
+        queue.insert(root);
+        while(!queue.isEmpty()){
+            Root<E> current=queue.extract();
+            pasos++;
+            if(current.get().equals(objective)){
+                return pasos;
+            }
+            if(current.getLeft()!=null){
+                queue.insert(current.getLeft());
+            }
+            if(current.getRight()!=null){
+                queue.insert(current.getRight());
+            }
+        }
+        return pasos;
+    }
+    public int searchLevelWithTime(E objective) {
+        long inicio = System.nanoTime();
+
+        int resultado = searchLevelOrder(objective);
+
+        long fin = System.nanoTime();
+        long tiempo = fin - inicio;
+
+        System.out.println("Tiempo de ejecución: " + tiempo + " ns");
+        return resultado;
+    }
+
+    public int searchPreOrder(E objective) {
+        int pasos=0;
+        if(isEmpty()||objective==null){
+            return pasos;
+        }
+        pasos++;
+        if(root.get().equals(objective)){
+            return pasos;
+        }
+        if(root.getLeft()!=null){
+            BinTree<E> tree=new BinTree<>(root.getLeft());
+            int pasosT=tree.searchPreOrder(objective);
+            if(pasosT>0){
+                return pasos+pasosT;
+            }
+            pasos+= Math.abs(pasosT);
+        }
+        if(root.getRight()!=null){
+            BinTree<E> tree=new BinTree<>(root.getRight());
+            int pasosT=tree.searchPreOrder(objective);
+            if(pasosT>0){
+                return pasos+pasosT;
+            }
+            pasos+= Math.abs(pasosT);
+        }
+        return -pasos;
+    }
+    public int searchPreOrderWithTime(E objective) {
+        long inicio = System.nanoTime();
+
+        int resultado = searchPreOrder(objective);
+
+        long fin = System.nanoTime();
+        long tiempo = fin - inicio;
+
+        System.out.println("Tiempo de ejecución: " + tiempo + " ns");
+        return resultado;
+
+    }
+
+    public int searchInOrder(E objective) {
+        if(isEmpty()||objective==null){
+            return 0;
+        }
+        int pasos=0;
+        if(root.getLeft()!=null){
+            BinTree<E> tree=new BinTree<>(root.getLeft());
+            int pasosT=tree.searchInOrder(objective);
+            if(pasosT>0){
+                return pasos+pasosT;
+            }
+            pasos+= Math.abs(pasosT);
+        }
+        pasos++;
+        if(root.get().equals(objective)){
+            return pasos;
+        }
+        if(root.getRight()!=null){
+            BinTree<E> tree=new BinTree<>(root.getRight());
+            int pasosT=tree.searchInOrder(objective);
+            if(pasosT>0){
+                return pasos+pasosT;
+            }
+            pasos+= Math.abs(pasosT);
+        }
+        return -pasos;
+    }
+    public int searchInOrderWithTime(E objective) {
+        long inicio = System.nanoTime();
+
+        int resultado = searchInOrder(objective);
+
+        long fin = System.nanoTime();
+        long tiempo = fin - inicio;
+
+        System.out.println("Tiempo de ejecución: " + tiempo + " ns");
+        return resultado;
+    }
+    public int searchPostOrder(E objective) {
+        int pasos=0;
+        if(isEmpty()||objective==null){
+            return pasos;
+        }
+
+        if(root.getLeft()!=null){
+            BinTree<E> tree=new BinTree<>(root.getLeft());
+            int pasosT=tree.searchPostOrder(objective);
+            if(pasosT>0){
+                return pasos+pasosT;
+            }
+            pasos+= Math.abs(pasosT);
+        }
+        if(root.getRight()!=null){
+            BinTree<E> tree=new BinTree<>(root.getRight());
+            int pasosT=tree.searchPostOrder(objective);
+            if(pasosT>0){
+                return pasos+pasosT;
+            }
+            pasos+= Math.abs(pasosT);
+        }
+        pasos++;
+        if(root.get().equals(objective)){
+            return pasos;
+        }
+        return -pasos;
+    }
+
+    public int searchPostOrderWithTime(E objective) {
+        long inicio = System.nanoTime();
+
+        int resultado = searchPostOrder(objective);
+
+        long fin = System.nanoTime();
+        long tiempo = fin - inicio;
+
+        System.out.println("Tiempo de ejecución: " + tiempo + " ns");
+        return resultado;
     }
 }
