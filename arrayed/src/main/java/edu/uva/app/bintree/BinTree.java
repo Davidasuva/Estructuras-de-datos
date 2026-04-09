@@ -1,7 +1,6 @@
 package edu.uva.app.bintree;
 import edu.uva.app.linkedlist.singly.singly.LinkedList;
 import edu.uva.app.queue.list.Queue;
-import edu.uva.model.iterator.Iterator;
 import edu.uva.model.node.AbstractNode;
 import edu.uva.model.tree.AbstractTree;
 import edu.uva.model.tree.Tree;
@@ -10,7 +9,7 @@ import edu.uva.model.tree.Tree;
 
 public class BinTree<E> extends AbstractTree<E> {
 
-    private Root<E> root;
+    protected Root<E> root;
     protected int size;
 
 
