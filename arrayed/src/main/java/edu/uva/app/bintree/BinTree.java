@@ -29,16 +29,8 @@ public class BinTree<E> extends AbstractTree<E> {
         if(isEmpty()){
             return true;
         }
-        if((root.getRight()!=null&&root.getLeft()!=null)){
-            BinTree<E> leftTree=new BinTree<>(root.getLeft());
-            BinTree<E> rightTree=new BinTree<>(root.getRight());
-            if(leftTree.getHeight()==rightTree.getHeight()){
-                return leftTree.isComplete() && rightTree.isComplete();
-            }else{
-                return false;
-            }
-        }
-        return (root.getRight() == null && root.getLeft() == null);
+
+        return (Math.pow(2,getHeight())-1)==size();
     }
 
     @Override
@@ -61,31 +53,29 @@ public class BinTree<E> extends AbstractTree<E> {
 
     @Override
     public int getlCI() {
-        int LCI=0;
+
         if(root==null){
             return 0;
         }
         Queue<Root<E>> queue= new Queue<>();
         queue.insert(root);
-        Root<E> nextLevel=root.getLeft();
-        LCI++;
-        int nivel=2;
+        int LCI=0;
+        int nivel=1;
         while(!queue.isEmpty()){
-            Root<E> current=queue.extract();
+            int size=queue.size();
 
-            if (current.equals(nextLevel)){
-                nivel++;
-                nextLevel=current.getLeft();
-            }
-            if(current.getLeft()!=null){
-                queue.insert(current.getLeft());
-                LCI+=nivel;
+            for(int i=0;i<size;i++){
+                Root<E> current=queue.extract();
 
-            }
-            if(current.getRight()!=null){
-                queue.insert(current.getRight());
                 LCI+=nivel;
+                if(current.getLeft()!=null){
+                    queue.insert(current.getLeft());
+                }
+                if(current.getRight()!=null){
+                    queue.insert(current.getRight());
+                }
             }
+            nivel++;
         }
         return LCI;
     }
@@ -567,5 +557,47 @@ public class BinTree<E> extends AbstractTree<E> {
 
         System.out.println("Tiempo de ejecución: " + tiempo + " ns");
         return resultado;
+    }
+
+    public void printTree(){
+        printTreeAgain(root,"",true);
+    }
+
+    private void printTreeAgain(Root<E> root, String text, boolean isFinal){
+        if(root==null){
+            return;
+        }
+        System.out.println(text + "--" + root.get()+" ");
+
+        String newPrefix = text + (isFinal ? "    " : "|    ");
+
+        if(root.getLeft()!=null&&root.getRight()!=null){
+            printTreeAgain(root.getLeft(),newPrefix,false);
+            printTreeAgain(root.getRight(),newPrefix,true);
+        }
+        else if(root.getLeft()!=null){
+            printTreeAgain(root.getLeft(),newPrefix,true);
+        }else if(root.getRight()!=null){
+            printTreeAgain(root.getRight(),newPrefix,true);
+        }
+    }
+    @Override
+    public boolean isEquilibrated(){
+        if(isEmpty()){
+            return true;
+        }
+        int height1=getLeftSubtree(root).getHeight();
+        int height2=getRightSubtree(root).getHeight();
+        return (height2 - height1) <= 1 && (height2 - height1) >= -1;
+    }
+
+    @Override
+    public int equilibrated(){
+        if(isEmpty()){
+            return 0;
+        }
+        int height1=getLeftSubtree(root).getHeight();
+        int height2=getRightSubtree(root).getHeight();
+        return (height2-height1);
     }
 }

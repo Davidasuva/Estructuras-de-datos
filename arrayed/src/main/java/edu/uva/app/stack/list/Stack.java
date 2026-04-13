@@ -14,7 +14,7 @@ public class Stack<E> extends AbstractStack<E> {
 
     public Stack(){
 
-        this.list=null;
+        this.list=new LinkedList<>();
     }
 
     public Stack(LinkedList<E> element){

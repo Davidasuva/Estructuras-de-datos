@@ -3,11 +3,6 @@ package edu.uva.app.bintree.search;
 import edu.uva.app.bintree.BinTree;
 import edu.uva.app.bintree.Root;
 import edu.uva.app.linkedlist.singly.singly.LinkedList;
-import edu.uva.app.queue.list.Queue;
-import edu.uva.model.iterator.Iterator;
-import edu.uva.model.node.AbstractNode;
-import edu.uva.model.tree.AbstractTree;
-import edu.uva.model.tree.Tree;
 
 public class BinSearchTree<E extends Comparable<E>> extends BinTree<E> {
 
@@ -20,6 +15,47 @@ public class BinSearchTree<E extends Comparable<E>> extends BinTree<E> {
         this.root=root;
         size=1;
     }
+    @Override
+    public boolean remove(E value){
+        root=removeRecursive(root, value);
+        return true;
+    }
+
+
+    public Root<E> removeRecursive(Root<E> root,E value){
+        if(root==null){
+            return null;
+        }
+        if(value.compareTo(root.get())<0){
+            root.setLeft(removeRecursive(root.getLeft(),value));
+        }else if(value.compareTo(root.get())>0){
+            root.setRight(removeRecursive(root.getRight(),value));
+        }else{
+            if(root.getLeft()==null&&root.getRight()==null){
+                return null;
+            }
+            if(root.getLeft()==null){
+                return root.getRight();
+            }
+            if(root.getRight()==null){
+                return root.getLeft();
+            }
+
+            Root<E> minRoot=findMin(root.getRight());
+            root.set(minRoot.get());
+            root.setRight(removeRecursive(root.getRight(),minRoot.get()));
+        }
+        return root;
+    }
+
+    private Root<E> findMin(Root<E> root){
+        while(root.getLeft()!=null){
+            root=root.getLeft();
+        }
+        return root;
+    }
+
+
 
     @Override
     public boolean insert(E value){
@@ -50,7 +86,7 @@ public class BinSearchTree<E extends Comparable<E>> extends BinTree<E> {
         return searchBinSearch(root,value);
     }
 
-    public boolean searchBinSearch(Root<E> root,E value){
+    private boolean searchBinSearch(Root<E> root,E value){
         if(root==null){
             return false;
         }
@@ -64,11 +100,34 @@ public class BinSearchTree<E extends Comparable<E>> extends BinTree<E> {
         }
     }
 
+    public LinkedList<E>  searchList(E value){
+        return searchListRecursive(root,value);
+    }
+
+    private LinkedList<E> searchListRecursive(Root<E> root,E value){
+        LinkedList<E> list=new LinkedList<>();
+        if(root==null){
+            return list;
+        }
+        list.add(root.get());
+        if(root.get().equals(value)){
+            return list;
+        }
+        if(value.compareTo(root.get())<0){
+            list.add(searchListRecursive(root.getLeft(),value));
+            return list;
+        }else{
+            list.add(searchListRecursive(root.getRight(),value));
+            return list;
+        }
+
+    }
+
     public int searchWithSteps(E value){
         return searchWithStepsRecursivo(root,value,0);
     }
 
-    public int searchWithStepsRecursivo(Root<E> root, E value, int pasos){
+    private int searchWithStepsRecursivo(Root<E> root, E value, int pasos){
         if(root==null){
             return -pasos;
         }
@@ -91,30 +150,7 @@ public class BinSearchTree<E extends Comparable<E>> extends BinTree<E> {
         long fin=System.nanoTime();
 
         System.out.println("Pasos: "+ Math.abs(pasos));
-        System.out.println("Tiempo de ejecución: "+(fin-inicio)+"s");
+        System.out.println("Tiempo de ejecución: "+(fin-inicio)+"ns");
     }
-
-    public void printTree(){
-        printTreeAgain(root,"",true);
-    }
-
-    private void printTreeAgain(Root<E> root, String text, boolean isFinal){
-        if(root==null){
-            return;
-        }
-        System.out.println(text + (isFinal ? "-- " : "|-- ") + root.get());
-
-        String newPrefix = text + (isFinal ? "    " : "|   ");
-
-        if(root.getLeft()!=null||root.getRight()!=null){
-            printTreeAgain(root.getLeft(),newPrefix,false);
-            printTreeAgain(root.getRight(),newPrefix,false);
-        }else if(root.getLeft()!=null){
-            printTreeAgain(root.getLeft(),newPrefix,true);
-        }else{
-            printTreeAgain(root.getRight(),newPrefix,true);
-        }
-    }
-
 
 }

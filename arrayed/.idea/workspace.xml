@@ -4,11 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cef3ea5-a487-4390-9516-59fed917c3f2" name="Changes" comment="fixed binary tree again">
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/uva/app/bintree/search/BinSearchTreeTest.java" afterDir="false" />
+    <list default="true" id="5cef3ea5-a487-4390-9516-59fed917c3f2" name="Changes" comment="added BinarySearchTree">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/bintree/BinTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/bintree/BinTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/bintree/search/BinSearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/bintree/search/BinSearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/priorityQueue/PriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/priorityQueue/PriorityQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/stack/list/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/stack/list/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/model/tree/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/model/tree/Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uva/app/bintree/BinTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uva/app/bintree/BinTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uva/app/bintree/search/BinSearchTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uva/app/bintree/search/BinSearchTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.uva.app.linkedlist.singly.singly.LinkedListTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.uva.app.linkedlist.singly.singly.LinkedListTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.uva.app.linkedlist.singly.singly.LinkedListTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.uva.app.linkedlist.singly.singly.LinkedListTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +58,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.BinSearchTreeTest.insert.executor": "Run",
+    "JUnit.BinSearchTreeTest.remove.executor": "Run",
     "JUnit.BinSearchTreeTest.search.executor": "Run",
+    "JUnit.BinSearchTreeTest.searchList.executor": "Run",
     "JUnit.BinSearchTreeTest.searchWithTime.executor": "Run",
     "JUnit.BinTreeTest.getGrade.executor": "Run",
     "JUnit.BinTreeTest.getHeight.executor": "Debug",
@@ -63,10 +72,12 @@
     "JUnit.BinTreeTest.inorder.executor": "Run",
     "JUnit.BinTreeTest.insert.executor": "Run",
     "JUnit.BinTreeTest.isComplete.executor": "Run",
+    "JUnit.BinTreeTest.isEquilibrated.executor": "Run",
     "JUnit.BinTreeTest.isFull.executor": "Run",
     "JUnit.BinTreeTest.levelOrder.executor": "Run",
     "JUnit.BinTreeTest.postorder.executor": "Run",
     "JUnit.BinTreeTest.preorder.executor": "Run",
+    "JUnit.BinTreeTest.printTree.executor": "Run",
     "JUnit.BinTreeTest.remove.executor": "Run",
     "JUnit.BinTreeTest.search.executor": "Run",
     "JUnit.BinTreeTest.searchInOrder.executor": "Run",
@@ -101,8 +112,8 @@
       <recent name="edu.uva.app.bintree" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BinSearchTreeTest.searchWithTime">
-    <configuration name="BinSearchTreeTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BinSearchTreeTest.remove">
+    <configuration name="BinSearchTreeTest.remove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrayed" />
       <extension name="coverage">
         <pattern>
@@ -112,13 +123,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.uva.app.bintree.search" />
       <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.search.BinSearchTreeTest" />
-      <option name="METHOD_NAME" value="insert" />
+      <option name="METHOD_NAME" value="remove" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinSearchTreeTest.search" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinSearchTreeTest.searchList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrayed" />
       <extension name="coverage">
         <pattern>
@@ -128,29 +139,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.uva.app.bintree.search" />
       <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.search.BinSearchTreeTest" />
-      <option name="METHOD_NAME" value="search" />
+      <option name="METHOD_NAME" value="searchList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinSearchTreeTest.searchWithTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="arrayed" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.uva.app.bintree.search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.uva.app.bintree.search" />
-      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.search.BinSearchTreeTest" />
-      <option name="METHOD_NAME" value="searchWithTime" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BinTreeTest.searchInOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinTreeTest.isComplete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrayed" />
       <extension name="coverage">
         <pattern>
@@ -160,13 +155,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
       <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
-      <option name="METHOD_NAME" value="searchInOrder" />
+      <option name="METHOD_NAME" value="isComplete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinTreeTest.testSearchPreOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinTreeTest.isEquilibrated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrayed" />
       <extension name="coverage">
         <pattern>
@@ -176,7 +171,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
       <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
-      <option name="METHOD_NAME" value="testSearchPreOrder" />
+      <option name="METHOD_NAME" value="isEquilibrated" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinTreeTest.remove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="arrayed" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uva.app.bintree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
+      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
+      <option name="METHOD_NAME" value="remove" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -184,11 +195,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BinSearchTreeTest.searchWithTime" />
-        <item itemvalue="JUnit.BinSearchTreeTest.insert" />
-        <item itemvalue="JUnit.BinSearchTreeTest.search" />
-        <item itemvalue="JUnit.BinTreeTest.testSearchPreOrder" />
-        <item itemvalue="JUnit.BinTreeTest.searchInOrder" />
+        <item itemvalue="JUnit.BinSearchTreeTest.remove" />
+        <item itemvalue="JUnit.BinSearchTreeTest.searchList" />
+        <item itemvalue="JUnit.BinTreeTest.isEquilibrated" />
+        <item itemvalue="JUnit.BinTreeTest.isComplete" />
+        <item itemvalue="JUnit.BinTreeTest.remove" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775682886789</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added BinarySearchTree">
+      <option name="closed" value="true" />
+      <created>1775744368334</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1775744368334</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,6 +294,7 @@
     <MESSAGE value="Added Binary Tree" />
     <MESSAGE value="fixed binary tree" />
     <MESSAGE value="fixed binary tree again" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed binary tree again" />
+    <MESSAGE value="added BinarySearchTree" />
+    <option name="LAST_COMMIT_MESSAGE" value="added BinarySearchTree" />
   </component>
 </project>

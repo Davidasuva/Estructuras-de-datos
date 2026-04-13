@@ -26,6 +26,8 @@ public interface Tree<E> {
     double getlCIM();
     boolean isFull();
     boolean isComplete();
+    boolean isEquilibrated();
+    int equilibrated();
 
 
 

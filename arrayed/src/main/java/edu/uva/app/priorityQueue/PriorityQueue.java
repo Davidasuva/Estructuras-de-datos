@@ -25,12 +25,26 @@ public class PriorityQueue<E> extends AbstractPriorityQueue<E> {
 
     @Override
     public E peek(){
-        return array.get(0).peek();
+        Iterator<Queue<E>> iterator = array.iterator();
+        while(iterator.hasNext()){
+            Queue<E> queue = iterator.next();
+            if(!queue.isEmpty()){
+                return queue.peek();
+            }
+        }
+        return null;
     }
 
     @Override
     public E extract(){
-        return array.get(0).extract();
+        Iterator<Queue<E>> iterator = array.iterator();
+        while(iterator.hasNext()){
+            Queue<E> queue = iterator.next();
+            if(!queue.isEmpty()){
+                return queue.extract();
+            }
+        }
+        return null;
     }
 
     @Override

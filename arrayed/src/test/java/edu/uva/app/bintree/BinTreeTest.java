@@ -18,6 +18,7 @@ class BinTreeTest {
         assertTrue(binTree.insert("e"));
         assertTrue(binTree.insert("f"));
         assertTrue(binTree.insert("g"));
+        binTree.printTree();
         assertTrue(binTree.isComplete());
     }
 
@@ -194,11 +195,11 @@ class BinTreeTest {
         assertTrue(binTree.insert("f"));
         assertTrue(binTree.insert("g"));
         assertTrue(binTree.insert("h"));
-        LinkedList<String> list = binTree.levelOrder();
-        System.out.println(list.toString());
+        binTree.printTree();
         assertTrue(binTree.remove("c"));
-        LinkedList<String> list2 = binTree.levelOrder();
-        System.out.println(list2.toString());
+        binTree.printTree();
+        assertTrue(binTree.remove("b"));
+        binTree.printTree();
     }
 
     @Test
@@ -335,5 +336,40 @@ class BinTreeTest {
         assertTrue(binTree.insert("h"));
         System.out.println("Pasos: "+binTree.searchLevelOrder("h"));
         binTree.searchLevelWithTime("h");
+    }
+
+    @Test
+    void printTree() {
+        BinTree<String> binTree = new BinTree<>();
+        assertTrue(binTree.insert("a"));
+        assertTrue(binTree.insert("b"));
+        assertTrue(binTree.insert("c"));
+        assertTrue(binTree.insert("d"));
+        assertTrue(binTree.insert("e"));
+        assertTrue(binTree.insert("f"));
+        assertTrue(binTree.insert("g"));
+        assertTrue(binTree.insert("h"));
+        assertTrue(binTree.insert("i"));
+        binTree.printTree();
+    }
+
+    @Test
+    void isEquilibrated() {
+        BinTree<String> binTree = new BinTree<>();
+        assertTrue(binTree.insert("a"));
+        assertTrue(binTree.insert("b"));
+        assertTrue(binTree.insert("c"));
+        assertTrue(binTree.insert("d"));
+        assertTrue(binTree.insert("e"));
+        assertTrue(binTree.insert("f"));
+        assertTrue(binTree.insert("g"));
+        assertTrue(binTree.insert("h"));
+        assertTrue(binTree.insert("i"));
+        binTree.printTree();
+        assertTrue(binTree.isEquilibrated());
+    }
+
+    @Test
+    void equilibrated() {
     }
 }
