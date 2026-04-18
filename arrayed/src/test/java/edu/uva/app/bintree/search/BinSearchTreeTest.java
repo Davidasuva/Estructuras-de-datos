@@ -82,4 +82,21 @@ class BinSearchTreeTest {
         binTree.remove("c");
         binTree.printTree();
     }
+
+    @Test
+    void searchByRange() {
+        BinSearchTree<Integer> binTree = new BinSearchTree<>();
+        assertTrue(binTree.insert(2));
+        assertTrue(binTree.insert(3));
+        assertTrue(binTree.insert(1));
+        assertTrue(binTree.insert(4));
+        assertTrue(binTree.insert(5));
+        assertTrue(binTree.insert(6));
+        assertTrue(binTree.insert(7));
+        assertTrue(binTree.insert(8));
+        assertTrue(binTree.insert(9));
+        binTree.printTree();
+        LinkedList<Integer> list=new LinkedList<>();
+        System.out.println(binTree.searchByRange(3,7).toString());
+    }
 }

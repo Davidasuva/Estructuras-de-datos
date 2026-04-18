@@ -1,5 +1,7 @@
 package edu.uva.model.node;
 
+import edu.uva.app.graph.Vertex;
+
 public abstract class AbstractNode<E> implements Node<E>, Cloneable {
 
     protected E element;
@@ -21,6 +23,4 @@ public abstract class AbstractNode<E> implements Node<E>, Cloneable {
     public E get(){
         return element;
     }
-
-
 }

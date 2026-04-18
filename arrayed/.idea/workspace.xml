@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cef3ea5-a487-4390-9516-59fed917c3f2" name="Changes" comment="added BinarySearchTree">
+    <list default="true" id="5cef3ea5-a487-4390-9516-59fed917c3f2" name="Changes" comment="bynarySearchTree fixed, and PriorityQueue fixed">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/graph/Vertex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/graph/matrixGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/model/graph/AbstractGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/uva/model/graph/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/edu/uva/app/graph/matrixGraphTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/bintree/BinTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/bintree/BinTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/bintree/search/BinSearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/bintree/search/BinSearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/priorityQueue/PriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/priorityQueue/PriorityQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/stack/list/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/stack/list/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/app/linkedlist/node/doubly/circular/LinkedNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/app/linkedlist/node/doubly/circular/LinkedNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/model/node/AbstractNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/model/node/AbstractNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/uva/model/tree/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/uva/model/tree/Tree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/uva/app/bintree/BinTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uva/app/bintree/BinTreeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/uva/app/bintree/search/BinSearchTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/uva/app/bintree/search/BinSearchTreeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/node/doubly/circular/LinkedNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/app/linkedlist/node/doubly/circular/LinkedNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/edu/uva/model/node/AbstractNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/uva/model/node/AbstractNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.uva.app.linkedlist.singly.singly.LinkedListTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.uva.app.linkedlist.singly.singly.LinkedListTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/edu.uva.app.linkedlist.singly.singly.LinkedListTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.uva.app.linkedlist.singly.singly.LinkedListTest.txt" afterDir="false" />
     </list>
@@ -60,6 +66,7 @@
     "JUnit.BinSearchTreeTest.insert.executor": "Run",
     "JUnit.BinSearchTreeTest.remove.executor": "Run",
     "JUnit.BinSearchTreeTest.search.executor": "Run",
+    "JUnit.BinSearchTreeTest.searchByRange.executor": "Run",
     "JUnit.BinSearchTreeTest.searchList.executor": "Run",
     "JUnit.BinSearchTreeTest.searchWithTime.executor": "Run",
     "JUnit.BinTreeTest.getGrade.executor": "Run",
@@ -88,6 +95,8 @@
     "JUnit.BinTreeTest.testSearchPreOrder.executor": "Run",
     "JUnit.LinkedListTest.executor": "Run",
     "JUnit.LinkedListTest.testSet.executor": "Run",
+    "JUnit.matrixGraphTest.addEdge.executor": "Run",
+    "JUnit.matrixGraphTest.removeVortex.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -108,11 +117,12 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="edu.uva.app.graph" />
       <recent name="edu.uva.app.bintree.search" />
       <recent name="edu.uva.app.bintree" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BinSearchTreeTest.remove">
+  <component name="RunManager" selected="JUnit.matrixGraphTest.removeVortex">
     <configuration name="BinSearchTreeTest.remove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrayed" />
       <extension name="coverage">
@@ -124,6 +134,22 @@
       <option name="PACKAGE_NAME" value="edu.uva.app.bintree.search" />
       <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.search.BinSearchTreeTest" />
       <option name="METHOD_NAME" value="remove" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinSearchTreeTest.searchByRange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="arrayed" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.uva.app.bintree.search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.uva.app.bintree.search" />
+      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.search.BinSearchTreeTest" />
+      <option name="METHOD_NAME" value="searchByRange" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,49 +171,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinTreeTest.isComplete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="matrixGraphTest.addEdge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrayed" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uva.app.bintree.*" />
+          <option name="PATTERN" value="edu.uva.app.graph.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
-      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
-      <option name="METHOD_NAME" value="isComplete" />
+      <option name="PACKAGE_NAME" value="edu.uva.app.graph" />
+      <option name="MAIN_CLASS_NAME" value="edu.uva.app.graph.matrixGraphTest" />
+      <option name="METHOD_NAME" value="addEdge" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinTreeTest.isEquilibrated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="matrixGraphTest.removeVortex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrayed" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.uva.app.bintree.*" />
+          <option name="PATTERN" value="edu.uva.app.graph.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
-      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
-      <option name="METHOD_NAME" value="isEquilibrated" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BinTreeTest.remove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="arrayed" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="edu.uva.app.bintree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="edu.uva.app.bintree" />
-      <option name="MAIN_CLASS_NAME" value="edu.uva.app.bintree.BinTreeTest" />
-      <option name="METHOD_NAME" value="remove" />
+      <option name="PACKAGE_NAME" value="edu.uva.app.graph" />
+      <option name="MAIN_CLASS_NAME" value="edu.uva.app.graph.matrixGraphTest" />
+      <option name="METHOD_NAME" value="removeVortex" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -195,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.matrixGraphTest.removeVortex" />
+        <item itemvalue="JUnit.matrixGraphTest.addEdge" />
+        <item itemvalue="JUnit.BinSearchTreeTest.searchByRange" />
         <item itemvalue="JUnit.BinSearchTreeTest.remove" />
         <item itemvalue="JUnit.BinSearchTreeTest.searchList" />
-        <item itemvalue="JUnit.BinTreeTest.isEquilibrated" />
-        <item itemvalue="JUnit.BinTreeTest.isComplete" />
-        <item itemvalue="JUnit.BinTreeTest.remove" />
       </list>
     </recent_temporary>
   </component>
@@ -274,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775744368334</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="bynarySearchTree fixed, and PriorityQueue fixed">
+      <option name="closed" value="true" />
+      <created>1776123003439</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1776123003439</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,6 +313,7 @@
     <MESSAGE value="fixed binary tree" />
     <MESSAGE value="fixed binary tree again" />
     <MESSAGE value="added BinarySearchTree" />
-    <option name="LAST_COMMIT_MESSAGE" value="added BinarySearchTree" />
+    <MESSAGE value="bynarySearchTree fixed, and PriorityQueue fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bynarySearchTree fixed, and PriorityQueue fixed" />
   </component>
 </project>

@@ -1,5 +1,4 @@
 package edu.uva.model.tree;
-import edu.uva.app.bintree.Root;
 import edu.uva.model.list.List;
 import edu.uva.model.node.AbstractNode;
 

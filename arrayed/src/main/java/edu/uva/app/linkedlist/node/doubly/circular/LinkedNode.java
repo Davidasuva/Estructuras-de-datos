@@ -1,4 +1,5 @@
 package edu.uva.app.linkedlist.node.doubly.circular;
+import edu.uva.app.graph.Vertex;
 import edu.uva.model.node.AbstractNode;
 
 public class LinkedNode<E> extends AbstractNode<E> {

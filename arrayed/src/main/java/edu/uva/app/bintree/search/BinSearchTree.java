@@ -153,4 +153,23 @@ public class BinSearchTree<E extends Comparable<E>> extends BinTree<E> {
         System.out.println("Tiempo de ejecución: "+(fin-inicio)+"ns");
     }
 
+    public LinkedList<E> searchByRange(E min, E max){
+        return searchByRange2(root,min,max,new LinkedList<>());
+    }
+    public LinkedList<E> searchByRange2(Root<E> root, E min,E max, LinkedList<E> result){
+        if(root==null){
+            return null;
+        }
+        if(root.get().compareTo(min)>0){
+            searchByRange2(root.getLeft(),min,max,result);
+        }
+        if(root.get().compareTo(max)<=0&&root.get().compareTo(min)>=0){
+            result.add(root.get());
+        }
+        if(root.get().compareTo(max)<0){
+            searchByRange2(root.getRight(),min,max,result);
+        }
+        return result;
+    }
+
 }
